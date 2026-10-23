@@ -1,17 +1,12 @@
-import { Schema, Prop, SchemaFactory } from "@nestjs/mongoose";
-import { timestamp } from "rxjs";
+import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 
-@Schema ({ timestamps: true })
-
+@Schema({ timestamps: true })
 export class Task {
-    @Prop({required: true, unique: true, trim: true })
+    @Prop({ required: true, unique: true, trim: true })
     title: string;
 
-    @Prop({required: true, unique: true })
+    @Prop({ trim: true })
     description: string;
-
-    @Prop({ unique: true })
-    default: string;
 
     @Prop({ default: false })
     done: boolean;
